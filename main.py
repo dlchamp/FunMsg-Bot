@@ -19,8 +19,7 @@ from disnake import Intents
 from os import listdir, getenv
 
 
-intents= Intents()
-intents.message_content = True
+intents= Intents.all()
 bot = commands.Bot(intents=intents)
 
 
