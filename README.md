@@ -2,47 +2,35 @@
 Monitor a configured channel and randomly send a "fun msg" after a certain amount of messages have been sent without the "activity" expiring.
 
 
-## HEROKU SPECIFIC INSTRUCTIONS
 
+## Self Hosting
 
-### Discord Bot Token and Server Invitation
+### Dependencies
 
+* Built on the latest [Python3 - 3.9.7](https://www.python.org/downloads/)
+* see requirements.txt for Python dependencies
+* Python installed with PATH access in Windows
+
+### Getting Started
+
+#### Setting up Discord Bot
 1. Login to Discord web - https://discord.com
 2. Navigate to Discord Developer Portal - https://discord.com/developers/applications
 3. Click *New Application*
 4. Give the Appplication a name and *Create*
 5. Add image for Discord icon
 6. Go to Bot tab and click *Add Bot*
-7. Optional - Add image
-8. Copy the token and paste it somewhere safe. You will need it later
-9. Navigate to OAuth2 Tab > URL Generator
-10. Check **BOT** under the SCOPES section
-11. In the BOT PERMISSIONS section, check the following:
-    - Read Messages/View Channels
-    - Send Messages
-
-12. Copy the GENERATED URL link and paste it into your browser or in a discord message. Click the link to invite the bot
+7. Keep the default settings for Public Bot - *checked* and Require OAuth2 Code Grant - *unchecked*
+8. Enabled Message Content intents
+9. Copy Token
+10. Go to OAuth2 tab
+11. Under *Scopes* - Check Bot
+12. Under *Bot Permissions* - check Send messages, Read Message History, View Channels
+13. Copy the generated link and Go to the URL in your browser - Invite Bot to your Discord server
 
 
-### Getting Started
-**Github**
-1. Login to github
-2. Fork this heroku branch of the repo
-3. Go into config.py and add your monitor channel ID and edit other config attributes if you wish
-4. Make the repo private to prevent unauthorized access to your bot code
-
-**Heroku**
-1. Login to Heroku - https://id.heroku.com/login
-2. Create a new app - give it a name
-3. Settings > Config vars - Reveal Config Vars
-4. Replace KEY with `TOKEN` and VALUE with your bot token from above (step 8)
-5. Add and head back to Deploy
-6. Deployment Method - Connnect with Github
-7. Add the forked repo to your Heroku account
-8. Select the Heroku branch to deploy
-9. Deploy the branch
-10. Navigate to Resources tab - Dynos
-11. Click Edit icon - enable the worker
-12. Save
-13. Top right corner - More - View Logs
-14. Should see the bot load and print the message line that the bot is online and ready.
+#### Windows Installation and Run
+1. Download this repo and extract to a location
+2. Open command and navigate inside of bot's directory
+3. Open the .env-sample file in a text editor and paste in your copied token, save, and rename the .env-sample to .env
+4. Run `python -u main.py`
