@@ -21,7 +21,7 @@ Monitor a configured channel and randomly send a "fun msg" after a certain amoun
 5. Add image for Discord icon
 6. Go to Bot tab and click *Add Bot*
 7. Keep the default settings for Public Bot - *checked* and Require OAuth2 Code Grant - *unchecked*
-8. Enabled Message Content intents
+8. Enable all privileged intents (members, message, and presence)
 9. Copy Token
 10. Go to OAuth2 tab
 11. Under *Scopes* - Check Bot
