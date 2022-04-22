@@ -17,6 +17,7 @@ Available configs:
 from disnake.ext import commands
 from disnake import Intents
 from os import listdir, getenv
+from dotenv import load_dotenv
 
 
 intents= Intents.all()
@@ -37,5 +38,6 @@ def load_cogs(bot):
 
 if __name__ == "__main__":
     load_cogs(bot)
+    load_dotenv()
     bot.run(getenv('TOKEN'))
 
